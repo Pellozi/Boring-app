@@ -10,19 +10,19 @@ import '../../../../components/content_bottom_shet.dart';
 import '../../bloc/activity_bloc.dart';
 import '../../utils/converters.dart';
 
-class Header extends StatefulWidget {
+class HeaderListActivities extends StatefulWidget {
   final String activityTypeFilterSelected;
 
-  const Header({
+  const HeaderListActivities({
     required this.activityTypeFilterSelected,
     Key? key,
   }) : super(key: key);
 
   @override
-  State<Header> createState() => _HeaderState();
+  State<HeaderListActivities> createState() => _HeaderListActivitiesState();
 }
 
-class _HeaderState extends State<Header> {
+class _HeaderListActivitiesState extends State<HeaderListActivities> {
   String activityTypeSelected = '';
   TextEditingController participantsFilter = TextEditingController();
   RangeValues priceRange = const RangeValues(0.0, 1.0);

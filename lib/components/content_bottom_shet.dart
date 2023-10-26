@@ -2,36 +2,19 @@ import 'package:boring_app/themes/boring_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
-void bottomSheet(){
-  showMaterialModalBottomSheet(
-    backgroundColor: Colors.transparent,
-    context: context,
-    builder: (context) => const ContentBottomSheetWidget(
-      showCancelButton: false,
-      title: "Ops, funcionalidade indisponível!",
-      content: StandardErrorDialogWidget(
-          'Se estiver com dúvidas, acesse a central de ajuda disponível no aplicativo. \n\n Se deseja nos enviar uma mensagem, use o chat do app ou envie um e-mail para app.personal@tecnofit.com.br'),
-    ),
-  );
-}
-
 class ContentBottomSheetWidget extends StatelessWidget {
   final String? title;
   final Widget? content;
   final bool isScrollable;
-  final double titleSize;
   final bool hasPaddingCancelButton;
-  final bool titlePadding;
 
-  const ContentBottomSheetWidget(
-      {super.key,
-        this.title,
-        this.content,
-        this.isScrollable = false,
-        this.titleSize = 20,
-        this.hasPaddingCancelButton = false,
-        this.titlePadding = false});
+  const ContentBottomSheetWidget({
+    super.key,
+    this.title,
+    this.content,
+    this.isScrollable = false,
+    this.hasPaddingCancelButton = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +56,7 @@ class ContentBottomSheetWidget extends StatelessWidget {
                           height: 5.w,
                           width: 48.w,
                           decoration: BoxDecoration(
-                            color: const BoringColors().secondaryTextColor,
+                            color: const BoringColors().mainColor,
                             borderRadius: BorderRadius.circular(35.r),
                           ),
                         ),
@@ -83,15 +66,14 @@ class ContentBottomSheetWidget extends StatelessWidget {
                       ),
                       if (title != null && title!.isNotEmpty) ...[
                         Padding(
-                          padding: titlePadding ? EdgeInsets.symmetric(horizontal: 50.w) : EdgeInsets.zero,
-                          child: Text(
-                            title!,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                    fontSize: titleSize.w,
-                                    color: const BoringColors().primaryTextColor,
-                                    fontWeight: FontWeight.w600)),
-                          ),
+                          padding: EdgeInsets.symmetric(horizontal: 48.w),
+                          child: Text(title!,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 16.w,
+                                  color: const BoringColors().primaryTextColor,
+                                  fontWeight: FontWeight.w600)),
+                        ),
                       ],
                       content ?? Container(),
                     ],
