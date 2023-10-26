@@ -20,6 +20,7 @@ class Activity with _$Activity {
     String? locality,
     int? totalLikes,
     bool? liked,
+    bool? booked,
   }) = _Activity;
 
   factory Activity.fromJson(Map<String, dynamic> json)

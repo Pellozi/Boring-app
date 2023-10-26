@@ -192,6 +192,8 @@ mixin _$ActivityEvent {
     required TResult Function(String participants) getActivitiesByParticipants,
     required TResult Function(List<Activity> activities, Activity activity)
         likeActivity,
+    required TResult Function(List<Activity> activities, Activity activity)
+        bookActivity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -202,6 +204,8 @@ mixin _$ActivityEvent {
     TResult? Function(String participants)? getActivitiesByParticipants,
     TResult? Function(List<Activity> activities, Activity activity)?
         likeActivity,
+    TResult? Function(List<Activity> activities, Activity activity)?
+        bookActivity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -212,6 +216,8 @@ mixin _$ActivityEvent {
     TResult Function(String participants)? getActivitiesByParticipants,
     TResult Function(List<Activity> activities, Activity activity)?
         likeActivity,
+    TResult Function(List<Activity> activities, Activity activity)?
+        bookActivity,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -223,6 +229,7 @@ mixin _$ActivityEvent {
     required TResult Function(_GetActivitiesByParticipants value)
         getActivitiesByParticipants,
     required TResult Function(_LikeActivity value) likeActivity,
+    required TResult Function(_BookActivity value) bookActivity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -233,6 +240,7 @@ mixin _$ActivityEvent {
     TResult? Function(_GetActivitiesByParticipants value)?
         getActivitiesByParticipants,
     TResult? Function(_LikeActivity value)? likeActivity,
+    TResult? Function(_BookActivity value)? bookActivity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -243,6 +251,7 @@ mixin _$ActivityEvent {
     TResult Function(_GetActivitiesByParticipants value)?
         getActivitiesByParticipants,
     TResult Function(_LikeActivity value)? likeActivity,
+    TResult Function(_BookActivity value)? bookActivity,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -311,6 +320,8 @@ class _$GetActivitiesImpl implements _GetActivities {
     required TResult Function(String participants) getActivitiesByParticipants,
     required TResult Function(List<Activity> activities, Activity activity)
         likeActivity,
+    required TResult Function(List<Activity> activities, Activity activity)
+        bookActivity,
   }) {
     return getActivities();
   }
@@ -324,6 +335,8 @@ class _$GetActivitiesImpl implements _GetActivities {
     TResult? Function(String participants)? getActivitiesByParticipants,
     TResult? Function(List<Activity> activities, Activity activity)?
         likeActivity,
+    TResult? Function(List<Activity> activities, Activity activity)?
+        bookActivity,
   }) {
     return getActivities?.call();
   }
@@ -337,6 +350,8 @@ class _$GetActivitiesImpl implements _GetActivities {
     TResult Function(String participants)? getActivitiesByParticipants,
     TResult Function(List<Activity> activities, Activity activity)?
         likeActivity,
+    TResult Function(List<Activity> activities, Activity activity)?
+        bookActivity,
     required TResult orElse(),
   }) {
     if (getActivities != null) {
@@ -354,6 +369,7 @@ class _$GetActivitiesImpl implements _GetActivities {
     required TResult Function(_GetActivitiesByParticipants value)
         getActivitiesByParticipants,
     required TResult Function(_LikeActivity value) likeActivity,
+    required TResult Function(_BookActivity value) bookActivity,
   }) {
     return getActivities(this);
   }
@@ -367,6 +383,7 @@ class _$GetActivitiesImpl implements _GetActivities {
     TResult? Function(_GetActivitiesByParticipants value)?
         getActivitiesByParticipants,
     TResult? Function(_LikeActivity value)? likeActivity,
+    TResult? Function(_BookActivity value)? bookActivity,
   }) {
     return getActivities?.call(this);
   }
@@ -380,6 +397,7 @@ class _$GetActivitiesImpl implements _GetActivities {
     TResult Function(_GetActivitiesByParticipants value)?
         getActivitiesByParticipants,
     TResult Function(_LikeActivity value)? likeActivity,
+    TResult Function(_BookActivity value)? bookActivity,
     required TResult orElse(),
   }) {
     if (getActivities != null) {
@@ -465,6 +483,8 @@ class _$GetActivitiesByTypeImpl implements _GetActivitiesByType {
     required TResult Function(String participants) getActivitiesByParticipants,
     required TResult Function(List<Activity> activities, Activity activity)
         likeActivity,
+    required TResult Function(List<Activity> activities, Activity activity)
+        bookActivity,
   }) {
     return getActivitiesByType(type);
   }
@@ -478,6 +498,8 @@ class _$GetActivitiesByTypeImpl implements _GetActivitiesByType {
     TResult? Function(String participants)? getActivitiesByParticipants,
     TResult? Function(List<Activity> activities, Activity activity)?
         likeActivity,
+    TResult? Function(List<Activity> activities, Activity activity)?
+        bookActivity,
   }) {
     return getActivitiesByType?.call(type);
   }
@@ -491,6 +513,8 @@ class _$GetActivitiesByTypeImpl implements _GetActivitiesByType {
     TResult Function(String participants)? getActivitiesByParticipants,
     TResult Function(List<Activity> activities, Activity activity)?
         likeActivity,
+    TResult Function(List<Activity> activities, Activity activity)?
+        bookActivity,
     required TResult orElse(),
   }) {
     if (getActivitiesByType != null) {
@@ -508,6 +532,7 @@ class _$GetActivitiesByTypeImpl implements _GetActivitiesByType {
     required TResult Function(_GetActivitiesByParticipants value)
         getActivitiesByParticipants,
     required TResult Function(_LikeActivity value) likeActivity,
+    required TResult Function(_BookActivity value) bookActivity,
   }) {
     return getActivitiesByType(this);
   }
@@ -521,6 +546,7 @@ class _$GetActivitiesByTypeImpl implements _GetActivitiesByType {
     TResult? Function(_GetActivitiesByParticipants value)?
         getActivitiesByParticipants,
     TResult? Function(_LikeActivity value)? likeActivity,
+    TResult? Function(_BookActivity value)? bookActivity,
   }) {
     return getActivitiesByType?.call(this);
   }
@@ -534,6 +560,7 @@ class _$GetActivitiesByTypeImpl implements _GetActivitiesByType {
     TResult Function(_GetActivitiesByParticipants value)?
         getActivitiesByParticipants,
     TResult Function(_LikeActivity value)? likeActivity,
+    TResult Function(_BookActivity value)? bookActivity,
     required TResult orElse(),
   }) {
     if (getActivitiesByType != null) {
@@ -637,6 +664,8 @@ class _$GetActivitiesByPriceImpl implements _GetActivitiesByPrice {
     required TResult Function(String participants) getActivitiesByParticipants,
     required TResult Function(List<Activity> activities, Activity activity)
         likeActivity,
+    required TResult Function(List<Activity> activities, Activity activity)
+        bookActivity,
   }) {
     return getActivitiesByPrice(minValue, maxValue);
   }
@@ -650,6 +679,8 @@ class _$GetActivitiesByPriceImpl implements _GetActivitiesByPrice {
     TResult? Function(String participants)? getActivitiesByParticipants,
     TResult? Function(List<Activity> activities, Activity activity)?
         likeActivity,
+    TResult? Function(List<Activity> activities, Activity activity)?
+        bookActivity,
   }) {
     return getActivitiesByPrice?.call(minValue, maxValue);
   }
@@ -663,6 +694,8 @@ class _$GetActivitiesByPriceImpl implements _GetActivitiesByPrice {
     TResult Function(String participants)? getActivitiesByParticipants,
     TResult Function(List<Activity> activities, Activity activity)?
         likeActivity,
+    TResult Function(List<Activity> activities, Activity activity)?
+        bookActivity,
     required TResult orElse(),
   }) {
     if (getActivitiesByPrice != null) {
@@ -680,6 +713,7 @@ class _$GetActivitiesByPriceImpl implements _GetActivitiesByPrice {
     required TResult Function(_GetActivitiesByParticipants value)
         getActivitiesByParticipants,
     required TResult Function(_LikeActivity value) likeActivity,
+    required TResult Function(_BookActivity value) bookActivity,
   }) {
     return getActivitiesByPrice(this);
   }
@@ -693,6 +727,7 @@ class _$GetActivitiesByPriceImpl implements _GetActivitiesByPrice {
     TResult? Function(_GetActivitiesByParticipants value)?
         getActivitiesByParticipants,
     TResult? Function(_LikeActivity value)? likeActivity,
+    TResult? Function(_BookActivity value)? bookActivity,
   }) {
     return getActivitiesByPrice?.call(this);
   }
@@ -706,6 +741,7 @@ class _$GetActivitiesByPriceImpl implements _GetActivitiesByPrice {
     TResult Function(_GetActivitiesByParticipants value)?
         getActivitiesByParticipants,
     TResult Function(_LikeActivity value)? likeActivity,
+    TResult Function(_BookActivity value)? bookActivity,
     required TResult orElse(),
   }) {
     if (getActivitiesByPrice != null) {
@@ -803,6 +839,8 @@ class _$GetActivitiesByParticipantsImpl
     required TResult Function(String participants) getActivitiesByParticipants,
     required TResult Function(List<Activity> activities, Activity activity)
         likeActivity,
+    required TResult Function(List<Activity> activities, Activity activity)
+        bookActivity,
   }) {
     return getActivitiesByParticipants(participants);
   }
@@ -816,6 +854,8 @@ class _$GetActivitiesByParticipantsImpl
     TResult? Function(String participants)? getActivitiesByParticipants,
     TResult? Function(List<Activity> activities, Activity activity)?
         likeActivity,
+    TResult? Function(List<Activity> activities, Activity activity)?
+        bookActivity,
   }) {
     return getActivitiesByParticipants?.call(participants);
   }
@@ -829,6 +869,8 @@ class _$GetActivitiesByParticipantsImpl
     TResult Function(String participants)? getActivitiesByParticipants,
     TResult Function(List<Activity> activities, Activity activity)?
         likeActivity,
+    TResult Function(List<Activity> activities, Activity activity)?
+        bookActivity,
     required TResult orElse(),
   }) {
     if (getActivitiesByParticipants != null) {
@@ -846,6 +888,7 @@ class _$GetActivitiesByParticipantsImpl
     required TResult Function(_GetActivitiesByParticipants value)
         getActivitiesByParticipants,
     required TResult Function(_LikeActivity value) likeActivity,
+    required TResult Function(_BookActivity value) bookActivity,
   }) {
     return getActivitiesByParticipants(this);
   }
@@ -859,6 +902,7 @@ class _$GetActivitiesByParticipantsImpl
     TResult? Function(_GetActivitiesByParticipants value)?
         getActivitiesByParticipants,
     TResult? Function(_LikeActivity value)? likeActivity,
+    TResult? Function(_BookActivity value)? bookActivity,
   }) {
     return getActivitiesByParticipants?.call(this);
   }
@@ -872,6 +916,7 @@ class _$GetActivitiesByParticipantsImpl
     TResult Function(_GetActivitiesByParticipants value)?
         getActivitiesByParticipants,
     TResult Function(_LikeActivity value)? likeActivity,
+    TResult Function(_BookActivity value)? bookActivity,
     required TResult orElse(),
   }) {
     if (getActivitiesByParticipants != null) {
@@ -991,6 +1036,8 @@ class _$LikeActivityImpl implements _LikeActivity {
     required TResult Function(String participants) getActivitiesByParticipants,
     required TResult Function(List<Activity> activities, Activity activity)
         likeActivity,
+    required TResult Function(List<Activity> activities, Activity activity)
+        bookActivity,
   }) {
     return likeActivity(activities, activity);
   }
@@ -1004,6 +1051,8 @@ class _$LikeActivityImpl implements _LikeActivity {
     TResult? Function(String participants)? getActivitiesByParticipants,
     TResult? Function(List<Activity> activities, Activity activity)?
         likeActivity,
+    TResult? Function(List<Activity> activities, Activity activity)?
+        bookActivity,
   }) {
     return likeActivity?.call(activities, activity);
   }
@@ -1017,6 +1066,8 @@ class _$LikeActivityImpl implements _LikeActivity {
     TResult Function(String participants)? getActivitiesByParticipants,
     TResult Function(List<Activity> activities, Activity activity)?
         likeActivity,
+    TResult Function(List<Activity> activities, Activity activity)?
+        bookActivity,
     required TResult orElse(),
   }) {
     if (likeActivity != null) {
@@ -1034,6 +1085,7 @@ class _$LikeActivityImpl implements _LikeActivity {
     required TResult Function(_GetActivitiesByParticipants value)
         getActivitiesByParticipants,
     required TResult Function(_LikeActivity value) likeActivity,
+    required TResult Function(_BookActivity value) bookActivity,
   }) {
     return likeActivity(this);
   }
@@ -1047,6 +1099,7 @@ class _$LikeActivityImpl implements _LikeActivity {
     TResult? Function(_GetActivitiesByParticipants value)?
         getActivitiesByParticipants,
     TResult? Function(_LikeActivity value)? likeActivity,
+    TResult? Function(_BookActivity value)? bookActivity,
   }) {
     return likeActivity?.call(this);
   }
@@ -1060,6 +1113,7 @@ class _$LikeActivityImpl implements _LikeActivity {
     TResult Function(_GetActivitiesByParticipants value)?
         getActivitiesByParticipants,
     TResult Function(_LikeActivity value)? likeActivity,
+    TResult Function(_BookActivity value)? bookActivity,
     required TResult orElse(),
   }) {
     if (likeActivity != null) {
@@ -1078,5 +1132,204 @@ abstract class _LikeActivity implements ActivityEvent {
   Activity get activity;
   @JsonKey(ignore: true)
   _$$LikeActivityImplCopyWith<_$LikeActivityImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$BookActivityImplCopyWith<$Res> {
+  factory _$$BookActivityImplCopyWith(
+          _$BookActivityImpl value, $Res Function(_$BookActivityImpl) then) =
+      __$$BookActivityImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Activity> activities, Activity activity});
+
+  $ActivityCopyWith<$Res> get activity;
+}
+
+/// @nodoc
+class __$$BookActivityImplCopyWithImpl<$Res>
+    extends _$ActivityEventCopyWithImpl<$Res, _$BookActivityImpl>
+    implements _$$BookActivityImplCopyWith<$Res> {
+  __$$BookActivityImplCopyWithImpl(
+      _$BookActivityImpl _value, $Res Function(_$BookActivityImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? activities = null,
+    Object? activity = null,
+  }) {
+    return _then(_$BookActivityImpl(
+      activities: null == activities
+          ? _value._activities
+          : activities // ignore: cast_nullable_to_non_nullable
+              as List<Activity>,
+      activity: null == activity
+          ? _value.activity
+          : activity // ignore: cast_nullable_to_non_nullable
+              as Activity,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ActivityCopyWith<$Res> get activity {
+    return $ActivityCopyWith<$Res>(_value.activity, (value) {
+      return _then(_value.copyWith(activity: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$BookActivityImpl implements _BookActivity {
+  const _$BookActivityImpl(
+      {required final List<Activity> activities, required this.activity})
+      : _activities = activities;
+
+  final List<Activity> _activities;
+  @override
+  List<Activity> get activities {
+    if (_activities is EqualUnmodifiableListView) return _activities;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_activities);
+  }
+
+  @override
+  final Activity activity;
+
+  @override
+  String toString() {
+    return 'ActivityEvent.bookActivity(activities: $activities, activity: $activity)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BookActivityImpl &&
+            const DeepCollectionEquality()
+                .equals(other._activities, _activities) &&
+            (identical(other.activity, activity) ||
+                other.activity == activity));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_activities), activity);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BookActivityImplCopyWith<_$BookActivityImpl> get copyWith =>
+      __$$BookActivityImplCopyWithImpl<_$BookActivityImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getActivities,
+    required TResult Function(String type) getActivitiesByType,
+    required TResult Function(String minValue, String maxValue)
+        getActivitiesByPrice,
+    required TResult Function(String participants) getActivitiesByParticipants,
+    required TResult Function(List<Activity> activities, Activity activity)
+        likeActivity,
+    required TResult Function(List<Activity> activities, Activity activity)
+        bookActivity,
+  }) {
+    return bookActivity(activities, activity);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getActivities,
+    TResult? Function(String type)? getActivitiesByType,
+    TResult? Function(String minValue, String maxValue)? getActivitiesByPrice,
+    TResult? Function(String participants)? getActivitiesByParticipants,
+    TResult? Function(List<Activity> activities, Activity activity)?
+        likeActivity,
+    TResult? Function(List<Activity> activities, Activity activity)?
+        bookActivity,
+  }) {
+    return bookActivity?.call(activities, activity);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getActivities,
+    TResult Function(String type)? getActivitiesByType,
+    TResult Function(String minValue, String maxValue)? getActivitiesByPrice,
+    TResult Function(String participants)? getActivitiesByParticipants,
+    TResult Function(List<Activity> activities, Activity activity)?
+        likeActivity,
+    TResult Function(List<Activity> activities, Activity activity)?
+        bookActivity,
+    required TResult orElse(),
+  }) {
+    if (bookActivity != null) {
+      return bookActivity(activities, activity);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_GetActivitiesByType value) getActivitiesByType,
+    required TResult Function(_GetActivitiesByPrice value) getActivitiesByPrice,
+    required TResult Function(_GetActivitiesByParticipants value)
+        getActivitiesByParticipants,
+    required TResult Function(_LikeActivity value) likeActivity,
+    required TResult Function(_BookActivity value) bookActivity,
+  }) {
+    return bookActivity(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_GetActivitiesByType value)? getActivitiesByType,
+    TResult? Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
+    TResult? Function(_GetActivitiesByParticipants value)?
+        getActivitiesByParticipants,
+    TResult? Function(_LikeActivity value)? likeActivity,
+    TResult? Function(_BookActivity value)? bookActivity,
+  }) {
+    return bookActivity?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_GetActivitiesByType value)? getActivitiesByType,
+    TResult Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
+    TResult Function(_GetActivitiesByParticipants value)?
+        getActivitiesByParticipants,
+    TResult Function(_LikeActivity value)? likeActivity,
+    TResult Function(_BookActivity value)? bookActivity,
+    required TResult orElse(),
+  }) {
+    if (bookActivity != null) {
+      return bookActivity(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _BookActivity implements ActivityEvent {
+  const factory _BookActivity(
+      {required final List<Activity> activities,
+      required final Activity activity}) = _$BookActivityImpl;
+
+  List<Activity> get activities;
+  Activity get activity;
+  @JsonKey(ignore: true)
+  _$$BookActivityImplCopyWith<_$BookActivityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

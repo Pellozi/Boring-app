@@ -8,4 +8,6 @@ abstract class ActivityEvent with _$ActivityEvent {
   const factory ActivityEvent.getActivitiesByParticipants({required String participants}) = _GetActivitiesByParticipants;
   const factory ActivityEvent.likeActivity({required List<Activity> activities, required Activity activity}) =
       _LikeActivity;
+  const factory ActivityEvent.bookActivity({required List<Activity> activities, required Activity activity}) =
+  _BookActivity;
 }

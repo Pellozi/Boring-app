@@ -31,6 +31,7 @@ mixin _$Activity {
   String? get locality => throw _privateConstructorUsedError;
   int? get totalLikes => throw _privateConstructorUsedError;
   bool? get liked => throw _privateConstructorUsedError;
+  bool? get booked => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,7 +55,8 @@ abstract class $ActivityCopyWith<$Res> {
       String? key,
       String? locality,
       int? totalLikes,
-      bool? liked});
+      bool? liked,
+      bool? booked});
 }
 
 /// @nodoc
@@ -81,6 +83,7 @@ class _$ActivityCopyWithImpl<$Res, $Val extends Activity>
     Object? locality = freezed,
     Object? totalLikes = freezed,
     Object? liked = freezed,
+    Object? booked = freezed,
   }) {
     return _then(_value.copyWith(
       activity: freezed == activity
@@ -127,6 +130,10 @@ class _$ActivityCopyWithImpl<$Res, $Val extends Activity>
           ? _value.liked
           : liked // ignore: cast_nullable_to_non_nullable
               as bool?,
+      booked: freezed == booked
+          ? _value.booked
+          : booked // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -150,7 +157,8 @@ abstract class _$$ActivityImplCopyWith<$Res>
       String? key,
       String? locality,
       int? totalLikes,
-      bool? liked});
+      bool? liked,
+      bool? booked});
 }
 
 /// @nodoc
@@ -175,6 +183,7 @@ class __$$ActivityImplCopyWithImpl<$Res>
     Object? locality = freezed,
     Object? totalLikes = freezed,
     Object? liked = freezed,
+    Object? booked = freezed,
   }) {
     return _then(_$ActivityImpl(
       activity: freezed == activity
@@ -221,6 +230,10 @@ class __$$ActivityImplCopyWithImpl<$Res>
           ? _value.liked
           : liked // ignore: cast_nullable_to_non_nullable
               as bool?,
+      booked: freezed == booked
+          ? _value.booked
+          : booked // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -239,7 +252,8 @@ class _$ActivityImpl with DiagnosticableTreeMixin implements _Activity {
       this.key,
       this.locality,
       this.totalLikes,
-      this.liked});
+      this.liked,
+      this.booked});
 
   factory _$ActivityImpl.fromJson(Map<String, dynamic> json) =>
       _$$ActivityImplFromJson(json);
@@ -266,10 +280,12 @@ class _$ActivityImpl with DiagnosticableTreeMixin implements _Activity {
   final int? totalLikes;
   @override
   final bool? liked;
+  @override
+  final bool? booked;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Activity(activity: $activity, type: $type, description: $description, participants: $participants, price: $price, accessibility: $accessibility, link: $link, key: $key, locality: $locality, totalLikes: $totalLikes, liked: $liked)';
+    return 'Activity(activity: $activity, type: $type, description: $description, participants: $participants, price: $price, accessibility: $accessibility, link: $link, key: $key, locality: $locality, totalLikes: $totalLikes, liked: $liked, booked: $booked)';
   }
 
   @override
@@ -287,7 +303,8 @@ class _$ActivityImpl with DiagnosticableTreeMixin implements _Activity {
       ..add(DiagnosticsProperty('key', key))
       ..add(DiagnosticsProperty('locality', locality))
       ..add(DiagnosticsProperty('totalLikes', totalLikes))
-      ..add(DiagnosticsProperty('liked', liked));
+      ..add(DiagnosticsProperty('liked', liked))
+      ..add(DiagnosticsProperty('booked', booked));
   }
 
   @override
@@ -311,7 +328,8 @@ class _$ActivityImpl with DiagnosticableTreeMixin implements _Activity {
                 other.locality == locality) &&
             (identical(other.totalLikes, totalLikes) ||
                 other.totalLikes == totalLikes) &&
-            (identical(other.liked, liked) || other.liked == liked));
+            (identical(other.liked, liked) || other.liked == liked) &&
+            (identical(other.booked, booked) || other.booked == booked));
   }
 
   @JsonKey(ignore: true)
@@ -328,7 +346,8 @@ class _$ActivityImpl with DiagnosticableTreeMixin implements _Activity {
       key,
       locality,
       totalLikes,
-      liked);
+      liked,
+      booked);
 
   @JsonKey(ignore: true)
   @override
@@ -356,7 +375,8 @@ abstract class _Activity implements Activity {
       final String? key,
       final String? locality,
       final int? totalLikes,
-      final bool? liked}) = _$ActivityImpl;
+      final bool? liked,
+      final bool? booked}) = _$ActivityImpl;
 
   factory _Activity.fromJson(Map<String, dynamic> json) =
       _$ActivityImpl.fromJson;
@@ -383,6 +403,8 @@ abstract class _Activity implements Activity {
   int? get totalLikes;
   @override
   bool? get liked;
+  @override
+  bool? get booked;
   @override
   @JsonKey(ignore: true)
   _$$ActivityImplCopyWith<_$ActivityImpl> get copyWith =>

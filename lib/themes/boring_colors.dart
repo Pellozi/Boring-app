@@ -8,5 +8,5 @@ class BoringColors {
   final Color primaryTextColor = const Color(0xFF303030);
   final Color secondaryTextColor = const Color(0xFFBAB9B9);
   final Color saveColor = const Color(0xFF1995D8);
-
+  final Color deleteColor = const Color(0xFFDF1707);
 }

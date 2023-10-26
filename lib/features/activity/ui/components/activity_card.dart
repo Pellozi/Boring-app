@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../bloc/activity_bloc.dart';
-import '../../utils/converters.dart';
+import '../../../../utils/converters.dart';
 import '../activity_detail_page.dart';
 
 class ActivityCard extends StatefulWidget {
@@ -27,13 +27,12 @@ class _ActivityCardState extends State<ActivityCard> {
           context,
           MaterialPageRoute(
               builder: (_) => BlocProvider.value(
-                value: BlocProvider.of<ActivityBloc>(context),
-                child: ActivityDetailPage(
+                    value: BlocProvider.of<ActivityBloc>(context),
+                    child: ActivityDetailPage(
                       activity: widget.activity,
-                      activityBloc: BlocProvider.of<ActivityBloc>(context),
                       activities: widget.activities,
                     ),
-              )),
+                  )),
         );
       },
       child: Container(
@@ -51,21 +50,24 @@ class _ActivityCardState extends State<ActivityCard> {
             children: [
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.w),
-                color: const BoringColors().mainColor.withOpacity(0.2),
+                color: widget.activity.booked!
+                    ? const BoringColors().saveColor.withOpacity(0.2)
+                    : const BoringColors().mainColor.withOpacity(0.2),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       capitalizeFirstLetter(widget.activity.type!),
                       style: TextStyle(
-                        color: const BoringColors().mainColor,
+                        color:
+                            widget.activity.booked! ? const BoringColors().saveColor : const BoringColors().mainColor,
                         fontWeight: FontWeight.w500,
                         fontSize: 16.w,
                       ),
                     ),
                     Icon(
                       activityIcon(widget.activity.type!),
-                      color: const BoringColors().mainColor,
+                      color: widget.activity.booked! ? const BoringColors().saveColor : const BoringColors().mainColor,
                       size: 24.w,
                     )
                   ],

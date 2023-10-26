@@ -8,7 +8,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import '../../../../components/content_bottom_shet.dart';
 import '../../bloc/activity_bloc.dart';
-import '../../utils/converters.dart';
+import '../../../../utils/converters.dart';
 
 class HeaderListActivities extends StatefulWidget {
   final String activityTypeFilterSelected;
@@ -318,19 +318,19 @@ class _HeaderListActivitiesState extends State<HeaderListActivities> {
             padding: EdgeInsets.only(top: 16.w),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child:BlocProvider.of<ActivityBloc>(context).state.isLoading ? const TabsLoading() :Row(
-                children: [
-                  TabCard('education', widget.activityTypeFilterSelected),
-                  TabCard('recreational', widget.activityTypeFilterSelected),
-                  TabCard('social', widget.activityTypeFilterSelected),
-                  TabCard('diy', widget.activityTypeFilterSelected),
-                  TabCard('charity', widget.activityTypeFilterSelected),
-                  TabCard('cooking', widget.activityTypeFilterSelected),
-                  TabCard('relaxation', widget.activityTypeFilterSelected),
-                  TabCard('music', widget.activityTypeFilterSelected),
-                  TabCard('busywork', widget.activityTypeFilterSelected),
-                ],
-              ),
+              child:  Row(
+                      children: [
+                        TabCard('education', widget.activityTypeFilterSelected),
+                        TabCard('recreational', widget.activityTypeFilterSelected),
+                        TabCard('social', widget.activityTypeFilterSelected),
+                        TabCard('diy', widget.activityTypeFilterSelected),
+                        TabCard('charity', widget.activityTypeFilterSelected),
+                        TabCard('cooking', widget.activityTypeFilterSelected),
+                        TabCard('relaxation', widget.activityTypeFilterSelected),
+                        TabCard('music', widget.activityTypeFilterSelected),
+                        TabCard('busywork', widget.activityTypeFilterSelected),
+                      ],
+                    ),
             ),
           )
         ],

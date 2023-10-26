@@ -22,9 +22,12 @@ class ActivityBloc extends Bloc<ActivityEvent, ActivityState> {
           emit(state.copyWith(activities: await getActivities(), isLoading: false));
         },
         getActivitiesByType: (String activityType) async {
+          emit(state.copyWith(activityTypeFilter: activityType));
           emit(state.copyWith(activities: [], isLoading: true));
           emit(state.copyWith(
-              activities: await getActivitiesByType(activityType), isLoading: false, activityTypeFilter: activityType));
+            activities: await getActivitiesByType(activityType),
+            isLoading: false,
+          ));
         },
         getActivitiesByPrice: (String minValue, String maxValue) async {
           emit(state.copyWith(activities: [], isLoading: true));
@@ -42,6 +45,12 @@ class ActivityBloc extends Bloc<ActivityEvent, ActivityState> {
         ) {
           emit(state.copyWith(activities: likeActivity(activities, activity)));
         },
+        bookActivity: (
+          List<Activity> activities,
+          Activity activity,
+        ) {
+          emit(state.copyWith(activities: bookActivity(activities, activity)));
+        },
       );
     });
   }
@@ -54,9 +63,10 @@ class ActivityBloc extends Bloc<ActivityEvent, ActivityState> {
       var activity = response.copyWith(
           totalLikes: random.nextInt(10) + 1,
           liked: false,
+          booked: false,
           description:
               'Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took',
-          locality: 'High Tech Campus Eindhoven, High Tech Campus, Eindhoven');
+          locality: 'High Tech Campus Eindhoven');
       activities.add(activity);
     }
     return activities;
@@ -70,9 +80,10 @@ class ActivityBloc extends Bloc<ActivityEvent, ActivityState> {
       var activity = response.copyWith(
           totalLikes: random.nextInt(10) + 1,
           liked: false,
+          booked: false,
           description:
               'Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took',
-          locality: 'High Tech Campus Eindhoven, High Tech Campus, Eindhoven');
+          locality: 'High Tech Campus Eindhoven');
       activities.add(activity);
     }
     return activities;
@@ -86,9 +97,10 @@ class ActivityBloc extends Bloc<ActivityEvent, ActivityState> {
       var activity = response.copyWith(
           totalLikes: random.nextInt(10) + 1,
           liked: false,
+          booked: false,
           description:
               'Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took',
-          locality: 'High Tech Campus Eindhoven, High Tech Campus, Eindhoven');
+          locality: 'High Tech Campus Eindhoven');
       activities.add(activity);
     }
     return activities;
@@ -102,9 +114,10 @@ class ActivityBloc extends Bloc<ActivityEvent, ActivityState> {
       var activity = response.copyWith(
           totalLikes: random.nextInt(10) + 1,
           liked: false,
+          booked: false,
           description:
               'Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took',
-          locality: 'High Tech Campus Eindhoven, High Tech Campus, Eindhoven');
+          locality: 'High Tech Campus Eindhoven');
       activities.add(activity);
     }
     return activities;
@@ -117,9 +130,27 @@ class ActivityBloc extends Bloc<ActivityEvent, ActivityState> {
     List<Activity> newActivities = [];
     for (var index = 0; index < activities.length; index++) {
       if (activities[index].key == activity.key) {
-        var newActivity = activities[index].copyWith(
-            liked: activity.liked == false ? true : false,
-            totalLikes: activity.liked == false ? activity.totalLikes! + 1 : activity.totalLikes! - 1);
+        var newActivity = activity.copyWith(
+            liked: activities[index].liked == false ? true : false,
+            totalLikes: activities[index].liked == false
+                ? activities[index].totalLikes! + 1
+                : activities[index].totalLikes! - 1);
+        newActivities.add(newActivity);
+        continue;
+      }
+      newActivities.add(activities[index]);
+    }
+    return newActivities;
+  }
+
+  List<Activity> bookActivity(
+    List<Activity> activities,
+    Activity activity,
+  ) {
+    List<Activity> newActivities = [];
+    for (var index = 0; index < activities.length; index++) {
+      if (activities[index].key == activity.key) {
+        var newActivity = activity.copyWith(booked: activities[index].booked == false ? true : false);
         newActivities.add(newActivity);
         continue;
       }

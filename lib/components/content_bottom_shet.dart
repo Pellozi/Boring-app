@@ -8,7 +8,7 @@ class ContentBottomSheetWidget extends StatelessWidget {
   final bool isScrollable;
   final bool hasPaddingCancelButton;
 
-  const ContentBottomSheetWidget({
+  const ContentBottomSheetWidget( {
     super.key,
     this.title,
     this.content,

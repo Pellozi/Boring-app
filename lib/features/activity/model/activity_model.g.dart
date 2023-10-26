@@ -19,6 +19,7 @@ _$ActivityImpl _$$ActivityImplFromJson(Map<String, dynamic> json) =>
       locality: json['locality'] as String?,
       totalLikes: json['totalLikes'] as int?,
       liked: json['liked'] as bool?,
+      booked: json['booked'] as bool?,
     );
 
 Map<String, dynamic> _$$ActivityImplToJson(_$ActivityImpl instance) =>
@@ -34,4 +35,5 @@ Map<String, dynamic> _$$ActivityImplToJson(_$ActivityImpl instance) =>
       'locality': instance.locality,
       'totalLikes': instance.totalLikes,
       'liked': instance.liked,
+      'booked': instance.booked,
     };
