@@ -15,7 +15,6 @@ class Activity with _$Activity {
     int? participants,
     double? price,
     double? accessibility,
-    String? link,
     String? key,
     String? locality,
     int? totalLikes,
