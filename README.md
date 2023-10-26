@@ -1,16 +1,24 @@
-# boring_app
+# Boring App
 
 App to help users find activities they can do when they are bored
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Flutter version:
 
-A few resources to get you started if this is your first Flutter project:
+    3.13.9
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Dart version:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    3.1.5
+
+Java version OpenJDK Runtime Environment:
+    
+     (build 17.0.6+0-b2043.56-10027231)
+
+To run the code generator, execute the following command:
+
+    dart run build_runner build --delete-conflicting-outputs
+
+
+
