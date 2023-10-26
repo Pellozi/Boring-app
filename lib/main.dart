@@ -4,11 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'features/activity/ui/activities_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const BoringApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BoringApp extends StatelessWidget {
+  const BoringApp({super.key});
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -16,11 +16,12 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_ , child) {
-        return MaterialApp(
+        return  MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Boring App',
           home: child,
         );
+
       },
       child: const ActivitiesPage(),
     );

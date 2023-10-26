@@ -17,27 +17,28 @@ class ActivityBloc extends Bloc<ActivityEvent, ActivityState> {
   ActivityBloc() : super(const ActivityState(isLoading: false, activities: [], activityTypeFilter: '')) {
     on<ActivityEvent>((event, emit) async {
       await event.when(
+        loading: (loading){
+          emit(state.copyWith(isLoading: loading));
+        },
+        setActivityFilter: (filter){
+          emit(state.copyWith(activityTypeFilter: filter));
+        },
         getActivities: () async {
-          emit(state.copyWith(activities: [], isLoading: true));
           emit(state.copyWith(activities: await getActivities(), isLoading: false));
         },
         getActivitiesByType: (String activityType) async {
-          emit(state.copyWith(activityTypeFilter: activityType));
-          emit(state.copyWith(activities: [], isLoading: true));
           emit(state.copyWith(
             activities: await getActivitiesByType(activityType),
             isLoading: false,
           ));
         },
         getActivitiesByPrice: (String minValue, String maxValue) async {
-          emit(state.copyWith(activities: [], isLoading: true));
           emit(state.copyWith(
-              activities: await getActivitiesByPrice(minValue, maxValue), isLoading: false, activityTypeFilter: ''));
+              activities: await getActivitiesByPrice(minValue, maxValue), isLoading: false,));
         },
         getActivitiesByParticipants: (String participants) async {
-          emit(state.copyWith(activities: [], isLoading: true));
           emit(state.copyWith(
-              activities: await getActivitiesByParticipants(participants), isLoading: false, activityTypeFilter: ''));
+              activities: await getActivitiesByParticipants(participants), isLoading: false,));
         },
         likeActivity: (
           List<Activity> activities,

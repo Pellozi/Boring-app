@@ -70,9 +70,13 @@ class _TabCardState extends State<TabCard> {
           return;
         }
         if (BlocProvider.of<ActivityBloc>(context).state.activityTypeFilter == widget.activityType) {
+          BlocProvider.of<ActivityBloc>(context).add((const ActivityEvent.setActivityFilter(filter: '')));
+          BlocProvider.of<ActivityBloc>(context).add((const ActivityEvent.loading(loading: true)));
           BlocProvider.of<ActivityBloc>(context).add((const ActivityEvent.getActivitiesByType(type: '')));
           return;
         }
+        BlocProvider.of<ActivityBloc>(context).add((ActivityEvent.setActivityFilter(filter: widget.activityType)));
+        BlocProvider.of<ActivityBloc>(context).add((const ActivityEvent.loading(loading: true)));
         BlocProvider.of<ActivityBloc>(context).add((ActivityEvent.getActivitiesByType(type: widget.activityType)));
       },
       child: Container(

@@ -54,7 +54,7 @@ class ActivityDetailPage extends StatelessWidget {
       alignment: Alignment.bottomRight,
       children: [
         Hero(
-          tag: 'activityImage${activity.key}',
+          tag: 'activityImage${activity.key}[${activities.indexOf(activity)}]',
           child: Image.asset(
             activityImage(activity.type!),
             height: 160.w,
@@ -247,7 +247,7 @@ class ActivityDetailPage extends StatelessWidget {
             showMaterialModalBottomSheet(
               backgroundColor: Colors.transparent,
               context: context,
-              builder: (_) =>BlocProvider.value(
+              builder: (_) => BlocProvider.value(
                 value: BlocProvider.of<ActivityBloc>(context),
                 child: ContentBottomSheetWidget(
                   title: 'Cancel reservation',

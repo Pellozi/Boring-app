@@ -20,6 +20,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
   @override
   void initState() {
     super.initState();
+    _activityBloc.add((const ActivityEvent.loading(loading: true)));
     _activityBloc.add(const ActivityEvent.getActivities());
   }
 
@@ -33,7 +34,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
           return Stack(
             children: [
               Container(
-                height: 232.h,
+                height: 232.w,
                 width: double.infinity,
                 decoration: BoxDecoration(
                     color: const BoringColors().mainColor,

@@ -77,7 +77,7 @@ class _ActivityCardState extends State<ActivityCard> {
                 alignment: Alignment.bottomRight,
                 children: [
                   Hero(
-                    tag: 'activityImage${widget.activity.key}',
+                    tag: 'activityImage${widget.activity.key}[${widget.activities.indexOf(widget.activity)}]',
                     child: Image.asset(
                       activityImage(widget.activity.type!),
                       height: 96.w,
@@ -91,7 +91,7 @@ class _ActivityCardState extends State<ActivityCard> {
                           .add((ActivityEvent.likeActivity(activity: widget.activity, activities: widget.activities)));
                     },
                     child: Container(
-                      padding: EdgeInsets.all(8.w),
+                      padding: EdgeInsets.symmetric(horizontal: 6.w,vertical: 8.w),
                       margin: EdgeInsets.only(right: 16.w, bottom: 8.w),
                       width: 48.w,
                       decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8.w)),

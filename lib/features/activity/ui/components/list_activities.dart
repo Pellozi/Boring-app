@@ -1,7 +1,6 @@
 import 'package:boring_app/features/activity/ui/components/activity_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../bloc/activity_bloc.dart';
+
 import '../../model/activity_model.dart';
 
 class ListActivities extends StatefulWidget {

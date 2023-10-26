@@ -185,6 +185,8 @@ abstract class _ActivityState implements ActivityState {
 mixin _$ActivityEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(bool loading) loading,
+    required TResult Function(String filter) setActivityFilter,
     required TResult Function() getActivities,
     required TResult Function(String type) getActivitiesByType,
     required TResult Function(String minValue, String maxValue)
@@ -198,6 +200,8 @@ mixin _$ActivityEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool loading)? loading,
+    TResult? Function(String filter)? setActivityFilter,
     TResult? Function()? getActivities,
     TResult? Function(String type)? getActivitiesByType,
     TResult? Function(String minValue, String maxValue)? getActivitiesByPrice,
@@ -210,6 +214,8 @@ mixin _$ActivityEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool loading)? loading,
+    TResult Function(String filter)? setActivityFilter,
     TResult Function()? getActivities,
     TResult Function(String type)? getActivitiesByType,
     TResult Function(String minValue, String maxValue)? getActivitiesByPrice,
@@ -223,6 +229,8 @@ mixin _$ActivityEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SetActivityFilter value) setActivityFilter,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_GetActivitiesByType value) getActivitiesByType,
     required TResult Function(_GetActivitiesByPrice value) getActivitiesByPrice,
@@ -234,6 +242,8 @@ mixin _$ActivityEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SetActivityFilter value)? setActivityFilter,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_GetActivitiesByType value)? getActivitiesByType,
     TResult? Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
@@ -245,6 +255,8 @@ mixin _$ActivityEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SetActivityFilter value)? setActivityFilter,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_GetActivitiesByType value)? getActivitiesByType,
     TResult Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
@@ -273,6 +285,366 @@ class _$ActivityEventCopyWithImpl<$Res, $Val extends ActivityEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool loading});
+}
+
+/// @nodoc
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$ActivityEventCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? loading = null,
+  }) {
+    return _then(_$LoadingImpl(
+      loading: null == loading
+          ? _value.loading
+          : loading // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoadingImpl implements _Loading {
+  const _$LoadingImpl({required this.loading});
+
+  @override
+  final bool loading;
+
+  @override
+  String toString() {
+    return 'ActivityEvent.loading(loading: $loading)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingImpl &&
+            (identical(other.loading, loading) || other.loading == loading));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, loading);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
+      __$$LoadingImplCopyWithImpl<_$LoadingImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool loading) loading,
+    required TResult Function(String filter) setActivityFilter,
+    required TResult Function() getActivities,
+    required TResult Function(String type) getActivitiesByType,
+    required TResult Function(String minValue, String maxValue)
+        getActivitiesByPrice,
+    required TResult Function(String participants) getActivitiesByParticipants,
+    required TResult Function(List<Activity> activities, Activity activity)
+        likeActivity,
+    required TResult Function(List<Activity> activities, Activity activity)
+        bookActivity,
+  }) {
+    return loading(this.loading);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool loading)? loading,
+    TResult? Function(String filter)? setActivityFilter,
+    TResult? Function()? getActivities,
+    TResult? Function(String type)? getActivitiesByType,
+    TResult? Function(String minValue, String maxValue)? getActivitiesByPrice,
+    TResult? Function(String participants)? getActivitiesByParticipants,
+    TResult? Function(List<Activity> activities, Activity activity)?
+        likeActivity,
+    TResult? Function(List<Activity> activities, Activity activity)?
+        bookActivity,
+  }) {
+    return loading?.call(this.loading);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool loading)? loading,
+    TResult Function(String filter)? setActivityFilter,
+    TResult Function()? getActivities,
+    TResult Function(String type)? getActivitiesByType,
+    TResult Function(String minValue, String maxValue)? getActivitiesByPrice,
+    TResult Function(String participants)? getActivitiesByParticipants,
+    TResult Function(List<Activity> activities, Activity activity)?
+        likeActivity,
+    TResult Function(List<Activity> activities, Activity activity)?
+        bookActivity,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this.loading);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SetActivityFilter value) setActivityFilter,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_GetActivitiesByType value) getActivitiesByType,
+    required TResult Function(_GetActivitiesByPrice value) getActivitiesByPrice,
+    required TResult Function(_GetActivitiesByParticipants value)
+        getActivitiesByParticipants,
+    required TResult Function(_LikeActivity value) likeActivity,
+    required TResult Function(_BookActivity value) bookActivity,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SetActivityFilter value)? setActivityFilter,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_GetActivitiesByType value)? getActivitiesByType,
+    TResult? Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
+    TResult? Function(_GetActivitiesByParticipants value)?
+        getActivitiesByParticipants,
+    TResult? Function(_LikeActivity value)? likeActivity,
+    TResult? Function(_BookActivity value)? bookActivity,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SetActivityFilter value)? setActivityFilter,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_GetActivitiesByType value)? getActivitiesByType,
+    TResult Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
+    TResult Function(_GetActivitiesByParticipants value)?
+        getActivitiesByParticipants,
+    TResult Function(_LikeActivity value)? likeActivity,
+    TResult Function(_BookActivity value)? bookActivity,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Loading implements ActivityEvent {
+  const factory _Loading({required final bool loading}) = _$LoadingImpl;
+
+  bool get loading;
+  @JsonKey(ignore: true)
+  _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SetActivityFilterImplCopyWith<$Res> {
+  factory _$$SetActivityFilterImplCopyWith(_$SetActivityFilterImpl value,
+          $Res Function(_$SetActivityFilterImpl) then) =
+      __$$SetActivityFilterImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String filter});
+}
+
+/// @nodoc
+class __$$SetActivityFilterImplCopyWithImpl<$Res>
+    extends _$ActivityEventCopyWithImpl<$Res, _$SetActivityFilterImpl>
+    implements _$$SetActivityFilterImplCopyWith<$Res> {
+  __$$SetActivityFilterImplCopyWithImpl(_$SetActivityFilterImpl _value,
+      $Res Function(_$SetActivityFilterImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? filter = null,
+  }) {
+    return _then(_$SetActivityFilterImpl(
+      filter: null == filter
+          ? _value.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetActivityFilterImpl implements _SetActivityFilter {
+  const _$SetActivityFilterImpl({required this.filter});
+
+  @override
+  final String filter;
+
+  @override
+  String toString() {
+    return 'ActivityEvent.setActivityFilter(filter: $filter)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetActivityFilterImpl &&
+            (identical(other.filter, filter) || other.filter == filter));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, filter);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetActivityFilterImplCopyWith<_$SetActivityFilterImpl> get copyWith =>
+      __$$SetActivityFilterImplCopyWithImpl<_$SetActivityFilterImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool loading) loading,
+    required TResult Function(String filter) setActivityFilter,
+    required TResult Function() getActivities,
+    required TResult Function(String type) getActivitiesByType,
+    required TResult Function(String minValue, String maxValue)
+        getActivitiesByPrice,
+    required TResult Function(String participants) getActivitiesByParticipants,
+    required TResult Function(List<Activity> activities, Activity activity)
+        likeActivity,
+    required TResult Function(List<Activity> activities, Activity activity)
+        bookActivity,
+  }) {
+    return setActivityFilter(filter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool loading)? loading,
+    TResult? Function(String filter)? setActivityFilter,
+    TResult? Function()? getActivities,
+    TResult? Function(String type)? getActivitiesByType,
+    TResult? Function(String minValue, String maxValue)? getActivitiesByPrice,
+    TResult? Function(String participants)? getActivitiesByParticipants,
+    TResult? Function(List<Activity> activities, Activity activity)?
+        likeActivity,
+    TResult? Function(List<Activity> activities, Activity activity)?
+        bookActivity,
+  }) {
+    return setActivityFilter?.call(filter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool loading)? loading,
+    TResult Function(String filter)? setActivityFilter,
+    TResult Function()? getActivities,
+    TResult Function(String type)? getActivitiesByType,
+    TResult Function(String minValue, String maxValue)? getActivitiesByPrice,
+    TResult Function(String participants)? getActivitiesByParticipants,
+    TResult Function(List<Activity> activities, Activity activity)?
+        likeActivity,
+    TResult Function(List<Activity> activities, Activity activity)?
+        bookActivity,
+    required TResult orElse(),
+  }) {
+    if (setActivityFilter != null) {
+      return setActivityFilter(filter);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SetActivityFilter value) setActivityFilter,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_GetActivitiesByType value) getActivitiesByType,
+    required TResult Function(_GetActivitiesByPrice value) getActivitiesByPrice,
+    required TResult Function(_GetActivitiesByParticipants value)
+        getActivitiesByParticipants,
+    required TResult Function(_LikeActivity value) likeActivity,
+    required TResult Function(_BookActivity value) bookActivity,
+  }) {
+    return setActivityFilter(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SetActivityFilter value)? setActivityFilter,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_GetActivitiesByType value)? getActivitiesByType,
+    TResult? Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
+    TResult? Function(_GetActivitiesByParticipants value)?
+        getActivitiesByParticipants,
+    TResult? Function(_LikeActivity value)? likeActivity,
+    TResult? Function(_BookActivity value)? bookActivity,
+  }) {
+    return setActivityFilter?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SetActivityFilter value)? setActivityFilter,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_GetActivitiesByType value)? getActivitiesByType,
+    TResult Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
+    TResult Function(_GetActivitiesByParticipants value)?
+        getActivitiesByParticipants,
+    TResult Function(_LikeActivity value)? likeActivity,
+    TResult Function(_BookActivity value)? bookActivity,
+    required TResult orElse(),
+  }) {
+    if (setActivityFilter != null) {
+      return setActivityFilter(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetActivityFilter implements ActivityEvent {
+  const factory _SetActivityFilter({required final String filter}) =
+      _$SetActivityFilterImpl;
+
+  String get filter;
+  @JsonKey(ignore: true)
+  _$$SetActivityFilterImplCopyWith<_$SetActivityFilterImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -313,6 +685,8 @@ class _$GetActivitiesImpl implements _GetActivities {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(bool loading) loading,
+    required TResult Function(String filter) setActivityFilter,
     required TResult Function() getActivities,
     required TResult Function(String type) getActivitiesByType,
     required TResult Function(String minValue, String maxValue)
@@ -329,6 +703,8 @@ class _$GetActivitiesImpl implements _GetActivities {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool loading)? loading,
+    TResult? Function(String filter)? setActivityFilter,
     TResult? Function()? getActivities,
     TResult? Function(String type)? getActivitiesByType,
     TResult? Function(String minValue, String maxValue)? getActivitiesByPrice,
@@ -344,6 +720,8 @@ class _$GetActivitiesImpl implements _GetActivities {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool loading)? loading,
+    TResult Function(String filter)? setActivityFilter,
     TResult Function()? getActivities,
     TResult Function(String type)? getActivitiesByType,
     TResult Function(String minValue, String maxValue)? getActivitiesByPrice,
@@ -363,6 +741,8 @@ class _$GetActivitiesImpl implements _GetActivities {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SetActivityFilter value) setActivityFilter,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_GetActivitiesByType value) getActivitiesByType,
     required TResult Function(_GetActivitiesByPrice value) getActivitiesByPrice,
@@ -377,6 +757,8 @@ class _$GetActivitiesImpl implements _GetActivities {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SetActivityFilter value)? setActivityFilter,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_GetActivitiesByType value)? getActivitiesByType,
     TResult? Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
@@ -391,6 +773,8 @@ class _$GetActivitiesImpl implements _GetActivities {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SetActivityFilter value)? setActivityFilter,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_GetActivitiesByType value)? getActivitiesByType,
     TResult Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
@@ -476,6 +860,8 @@ class _$GetActivitiesByTypeImpl implements _GetActivitiesByType {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(bool loading) loading,
+    required TResult Function(String filter) setActivityFilter,
     required TResult Function() getActivities,
     required TResult Function(String type) getActivitiesByType,
     required TResult Function(String minValue, String maxValue)
@@ -492,6 +878,8 @@ class _$GetActivitiesByTypeImpl implements _GetActivitiesByType {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool loading)? loading,
+    TResult? Function(String filter)? setActivityFilter,
     TResult? Function()? getActivities,
     TResult? Function(String type)? getActivitiesByType,
     TResult? Function(String minValue, String maxValue)? getActivitiesByPrice,
@@ -507,6 +895,8 @@ class _$GetActivitiesByTypeImpl implements _GetActivitiesByType {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool loading)? loading,
+    TResult Function(String filter)? setActivityFilter,
     TResult Function()? getActivities,
     TResult Function(String type)? getActivitiesByType,
     TResult Function(String minValue, String maxValue)? getActivitiesByPrice,
@@ -526,6 +916,8 @@ class _$GetActivitiesByTypeImpl implements _GetActivitiesByType {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SetActivityFilter value) setActivityFilter,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_GetActivitiesByType value) getActivitiesByType,
     required TResult Function(_GetActivitiesByPrice value) getActivitiesByPrice,
@@ -540,6 +932,8 @@ class _$GetActivitiesByTypeImpl implements _GetActivitiesByType {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SetActivityFilter value)? setActivityFilter,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_GetActivitiesByType value)? getActivitiesByType,
     TResult? Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
@@ -554,6 +948,8 @@ class _$GetActivitiesByTypeImpl implements _GetActivitiesByType {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SetActivityFilter value)? setActivityFilter,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_GetActivitiesByType value)? getActivitiesByType,
     TResult Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
@@ -657,6 +1053,8 @@ class _$GetActivitiesByPriceImpl implements _GetActivitiesByPrice {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(bool loading) loading,
+    required TResult Function(String filter) setActivityFilter,
     required TResult Function() getActivities,
     required TResult Function(String type) getActivitiesByType,
     required TResult Function(String minValue, String maxValue)
@@ -673,6 +1071,8 @@ class _$GetActivitiesByPriceImpl implements _GetActivitiesByPrice {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool loading)? loading,
+    TResult? Function(String filter)? setActivityFilter,
     TResult? Function()? getActivities,
     TResult? Function(String type)? getActivitiesByType,
     TResult? Function(String minValue, String maxValue)? getActivitiesByPrice,
@@ -688,6 +1088,8 @@ class _$GetActivitiesByPriceImpl implements _GetActivitiesByPrice {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool loading)? loading,
+    TResult Function(String filter)? setActivityFilter,
     TResult Function()? getActivities,
     TResult Function(String type)? getActivitiesByType,
     TResult Function(String minValue, String maxValue)? getActivitiesByPrice,
@@ -707,6 +1109,8 @@ class _$GetActivitiesByPriceImpl implements _GetActivitiesByPrice {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SetActivityFilter value) setActivityFilter,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_GetActivitiesByType value) getActivitiesByType,
     required TResult Function(_GetActivitiesByPrice value) getActivitiesByPrice,
@@ -721,6 +1125,8 @@ class _$GetActivitiesByPriceImpl implements _GetActivitiesByPrice {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SetActivityFilter value)? setActivityFilter,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_GetActivitiesByType value)? getActivitiesByType,
     TResult? Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
@@ -735,6 +1141,8 @@ class _$GetActivitiesByPriceImpl implements _GetActivitiesByPrice {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SetActivityFilter value)? setActivityFilter,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_GetActivitiesByType value)? getActivitiesByType,
     TResult Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
@@ -832,6 +1240,8 @@ class _$GetActivitiesByParticipantsImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(bool loading) loading,
+    required TResult Function(String filter) setActivityFilter,
     required TResult Function() getActivities,
     required TResult Function(String type) getActivitiesByType,
     required TResult Function(String minValue, String maxValue)
@@ -848,6 +1258,8 @@ class _$GetActivitiesByParticipantsImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool loading)? loading,
+    TResult? Function(String filter)? setActivityFilter,
     TResult? Function()? getActivities,
     TResult? Function(String type)? getActivitiesByType,
     TResult? Function(String minValue, String maxValue)? getActivitiesByPrice,
@@ -863,6 +1275,8 @@ class _$GetActivitiesByParticipantsImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool loading)? loading,
+    TResult Function(String filter)? setActivityFilter,
     TResult Function()? getActivities,
     TResult Function(String type)? getActivitiesByType,
     TResult Function(String minValue, String maxValue)? getActivitiesByPrice,
@@ -882,6 +1296,8 @@ class _$GetActivitiesByParticipantsImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SetActivityFilter value) setActivityFilter,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_GetActivitiesByType value) getActivitiesByType,
     required TResult Function(_GetActivitiesByPrice value) getActivitiesByPrice,
@@ -896,6 +1312,8 @@ class _$GetActivitiesByParticipantsImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SetActivityFilter value)? setActivityFilter,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_GetActivitiesByType value)? getActivitiesByType,
     TResult? Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
@@ -910,6 +1328,8 @@ class _$GetActivitiesByParticipantsImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SetActivityFilter value)? setActivityFilter,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_GetActivitiesByType value)? getActivitiesByType,
     TResult Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
@@ -1029,6 +1449,8 @@ class _$LikeActivityImpl implements _LikeActivity {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(bool loading) loading,
+    required TResult Function(String filter) setActivityFilter,
     required TResult Function() getActivities,
     required TResult Function(String type) getActivitiesByType,
     required TResult Function(String minValue, String maxValue)
@@ -1045,6 +1467,8 @@ class _$LikeActivityImpl implements _LikeActivity {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool loading)? loading,
+    TResult? Function(String filter)? setActivityFilter,
     TResult? Function()? getActivities,
     TResult? Function(String type)? getActivitiesByType,
     TResult? Function(String minValue, String maxValue)? getActivitiesByPrice,
@@ -1060,6 +1484,8 @@ class _$LikeActivityImpl implements _LikeActivity {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool loading)? loading,
+    TResult Function(String filter)? setActivityFilter,
     TResult Function()? getActivities,
     TResult Function(String type)? getActivitiesByType,
     TResult Function(String minValue, String maxValue)? getActivitiesByPrice,
@@ -1079,6 +1505,8 @@ class _$LikeActivityImpl implements _LikeActivity {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SetActivityFilter value) setActivityFilter,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_GetActivitiesByType value) getActivitiesByType,
     required TResult Function(_GetActivitiesByPrice value) getActivitiesByPrice,
@@ -1093,6 +1521,8 @@ class _$LikeActivityImpl implements _LikeActivity {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SetActivityFilter value)? setActivityFilter,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_GetActivitiesByType value)? getActivitiesByType,
     TResult? Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
@@ -1107,6 +1537,8 @@ class _$LikeActivityImpl implements _LikeActivity {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SetActivityFilter value)? setActivityFilter,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_GetActivitiesByType value)? getActivitiesByType,
     TResult Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
@@ -1228,6 +1660,8 @@ class _$BookActivityImpl implements _BookActivity {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(bool loading) loading,
+    required TResult Function(String filter) setActivityFilter,
     required TResult Function() getActivities,
     required TResult Function(String type) getActivitiesByType,
     required TResult Function(String minValue, String maxValue)
@@ -1244,6 +1678,8 @@ class _$BookActivityImpl implements _BookActivity {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool loading)? loading,
+    TResult? Function(String filter)? setActivityFilter,
     TResult? Function()? getActivities,
     TResult? Function(String type)? getActivitiesByType,
     TResult? Function(String minValue, String maxValue)? getActivitiesByPrice,
@@ -1259,6 +1695,8 @@ class _$BookActivityImpl implements _BookActivity {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool loading)? loading,
+    TResult Function(String filter)? setActivityFilter,
     TResult Function()? getActivities,
     TResult Function(String type)? getActivitiesByType,
     TResult Function(String minValue, String maxValue)? getActivitiesByPrice,
@@ -1278,6 +1716,8 @@ class _$BookActivityImpl implements _BookActivity {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SetActivityFilter value) setActivityFilter,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_GetActivitiesByType value) getActivitiesByType,
     required TResult Function(_GetActivitiesByPrice value) getActivitiesByPrice,
@@ -1292,6 +1732,8 @@ class _$BookActivityImpl implements _BookActivity {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SetActivityFilter value)? setActivityFilter,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_GetActivitiesByType value)? getActivitiesByType,
     TResult? Function(_GetActivitiesByPrice value)? getActivitiesByPrice,
@@ -1306,6 +1748,8 @@ class _$BookActivityImpl implements _BookActivity {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SetActivityFilter value)? setActivityFilter,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_GetActivitiesByType value)? getActivitiesByType,
     TResult Function(_GetActivitiesByPrice value)? getActivitiesByPrice,

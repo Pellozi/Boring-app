@@ -35,6 +35,7 @@ class _HeaderListActivitiesState extends State<HeaderListActivities> {
       elevation: 0,
       pinned: true,
       toolbarHeight: 88.w,
+
       flexibleSpace: Column(
         children: [
           Padding(
@@ -262,12 +263,16 @@ class _HeaderListActivitiesState extends State<HeaderListActivities> {
                                         GestureDetector(
                                           onTap: () {
                                             if (selectedFilter == 1) {
+                                              BlocProvider.of<ActivityBloc>(context).add((const ActivityEvent.setActivityFilter(filter: '')));
+                                              BlocProvider.of<ActivityBloc>(context).add((const ActivityEvent.loading(loading: true)));
                                               BlocProvider.of<ActivityBloc>(context).add(
                                                   (ActivityEvent.getActivitiesByPrice(
                                                       minValue: priceRange.start.toString(),
                                                       maxValue: priceRange.end.toString())));
                                             }
                                             if (selectedFilter == 2) {
+                                              BlocProvider.of<ActivityBloc>(context).add((const ActivityEvent.setActivityFilter(filter: '')));
+                                              BlocProvider.of<ActivityBloc>(context).add((const ActivityEvent.loading(loading: true)));
                                               BlocProvider.of<ActivityBloc>(context)
                                                   .add((ActivityEvent.getActivitiesByParticipants(
                                                 participants: participantsFilter.text.toString(),

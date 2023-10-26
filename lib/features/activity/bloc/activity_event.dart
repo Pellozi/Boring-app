@@ -2,6 +2,8 @@ part of 'activity_bloc.dart';
 
 @freezed
 abstract class ActivityEvent with _$ActivityEvent {
+  const factory ActivityEvent.loading({required bool loading}) = _Loading;
+  const factory ActivityEvent.setActivityFilter({required String filter}) = _SetActivityFilter;
   const factory ActivityEvent.getActivities() = _GetActivities;
   const factory ActivityEvent.getActivitiesByType({required String type}) = _GetActivitiesByType;
   const factory ActivityEvent.getActivitiesByPrice({required String minValue, required String maxValue,}) = _GetActivitiesByPrice;
