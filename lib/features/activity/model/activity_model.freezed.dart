@@ -26,7 +26,6 @@ mixin _$Activity {
   int? get participants => throw _privateConstructorUsedError;
   double? get price => throw _privateConstructorUsedError;
   double? get accessibility => throw _privateConstructorUsedError;
-  String? get link => throw _privateConstructorUsedError;
   String? get key => throw _privateConstructorUsedError;
   String? get locality => throw _privateConstructorUsedError;
   int? get totalLikes => throw _privateConstructorUsedError;
@@ -51,7 +50,6 @@ abstract class $ActivityCopyWith<$Res> {
       int? participants,
       double? price,
       double? accessibility,
-      String? link,
       String? key,
       String? locality,
       int? totalLikes,
@@ -78,7 +76,6 @@ class _$ActivityCopyWithImpl<$Res, $Val extends Activity>
     Object? participants = freezed,
     Object? price = freezed,
     Object? accessibility = freezed,
-    Object? link = freezed,
     Object? key = freezed,
     Object? locality = freezed,
     Object? totalLikes = freezed,
@@ -110,10 +107,6 @@ class _$ActivityCopyWithImpl<$Res, $Val extends Activity>
           ? _value.accessibility
           : accessibility // ignore: cast_nullable_to_non_nullable
               as double?,
-      link: freezed == link
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as String?,
       key: freezed == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -153,7 +146,6 @@ abstract class _$$ActivityImplCopyWith<$Res>
       int? participants,
       double? price,
       double? accessibility,
-      String? link,
       String? key,
       String? locality,
       int? totalLikes,
@@ -178,7 +170,6 @@ class __$$ActivityImplCopyWithImpl<$Res>
     Object? participants = freezed,
     Object? price = freezed,
     Object? accessibility = freezed,
-    Object? link = freezed,
     Object? key = freezed,
     Object? locality = freezed,
     Object? totalLikes = freezed,
@@ -210,10 +201,6 @@ class __$$ActivityImplCopyWithImpl<$Res>
           ? _value.accessibility
           : accessibility // ignore: cast_nullable_to_non_nullable
               as double?,
-      link: freezed == link
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as String?,
       key: freezed == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -248,7 +235,6 @@ class _$ActivityImpl with DiagnosticableTreeMixin implements _Activity {
       this.participants,
       this.price,
       this.accessibility,
-      this.link,
       this.key,
       this.locality,
       this.totalLikes,
@@ -271,8 +257,6 @@ class _$ActivityImpl with DiagnosticableTreeMixin implements _Activity {
   @override
   final double? accessibility;
   @override
-  final String? link;
-  @override
   final String? key;
   @override
   final String? locality;
@@ -285,7 +269,7 @@ class _$ActivityImpl with DiagnosticableTreeMixin implements _Activity {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Activity(activity: $activity, type: $type, description: $description, participants: $participants, price: $price, accessibility: $accessibility, link: $link, key: $key, locality: $locality, totalLikes: $totalLikes, liked: $liked, booked: $booked)';
+    return 'Activity(activity: $activity, type: $type, description: $description, participants: $participants, price: $price, accessibility: $accessibility, key: $key, locality: $locality, totalLikes: $totalLikes, liked: $liked, booked: $booked)';
   }
 
   @override
@@ -299,7 +283,6 @@ class _$ActivityImpl with DiagnosticableTreeMixin implements _Activity {
       ..add(DiagnosticsProperty('participants', participants))
       ..add(DiagnosticsProperty('price', price))
       ..add(DiagnosticsProperty('accessibility', accessibility))
-      ..add(DiagnosticsProperty('link', link))
       ..add(DiagnosticsProperty('key', key))
       ..add(DiagnosticsProperty('locality', locality))
       ..add(DiagnosticsProperty('totalLikes', totalLikes))
@@ -322,7 +305,6 @@ class _$ActivityImpl with DiagnosticableTreeMixin implements _Activity {
             (identical(other.price, price) || other.price == price) &&
             (identical(other.accessibility, accessibility) ||
                 other.accessibility == accessibility) &&
-            (identical(other.link, link) || other.link == link) &&
             (identical(other.key, key) || other.key == key) &&
             (identical(other.locality, locality) ||
                 other.locality == locality) &&
@@ -342,7 +324,6 @@ class _$ActivityImpl with DiagnosticableTreeMixin implements _Activity {
       participants,
       price,
       accessibility,
-      link,
       key,
       locality,
       totalLikes,
@@ -371,7 +352,6 @@ abstract class _Activity implements Activity {
       final int? participants,
       final double? price,
       final double? accessibility,
-      final String? link,
       final String? key,
       final String? locality,
       final int? totalLikes,
@@ -393,8 +373,6 @@ abstract class _Activity implements Activity {
   double? get price;
   @override
   double? get accessibility;
-  @override
-  String? get link;
   @override
   String? get key;
   @override
