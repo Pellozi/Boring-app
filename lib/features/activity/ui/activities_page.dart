@@ -34,14 +34,14 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
           return Stack(
             children: [
               Container(
-                height: 232.w,
+                height: 240.w,
                 width: double.infinity,
                 decoration: BoxDecoration(
                     color: const BoringColors().mainColor,
                     borderRadius: BorderRadius.vertical(bottom: Radius.elliptical(160.r, 60.r))),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 48.w),
+                padding: EdgeInsets.only(top: 40.w),
                 child: BlocProvider(
                   create: (_) => _activityBloc,
                   child: CustomScrollView(

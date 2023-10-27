@@ -1,5 +1,6 @@
 import 'package:boring_app/features/activity/ui/components/activity_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../model/activity_model.dart';
 

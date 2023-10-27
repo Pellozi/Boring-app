@@ -35,7 +35,6 @@ class _HeaderListActivitiesState extends State<HeaderListActivities> {
       elevation: 0,
       pinned: true,
       toolbarHeight: 88.w,
-
       flexibleSpace: Column(
         children: [
           Padding(
@@ -320,7 +319,7 @@ class _HeaderListActivitiesState extends State<HeaderListActivities> {
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(top: 16.w),
+            padding: EdgeInsets.only(top: 8.w),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w),
               child:  Row(
