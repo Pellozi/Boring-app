@@ -1,5 +1,4 @@
 import 'package:boring_app/features/activity/ui/components/tab_card.dart';
-import 'package:boring_app/features/activity/ui/components/tabs_loading.dart';
 import 'package:boring_app/themes/boring_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

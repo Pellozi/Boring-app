@@ -62,7 +62,7 @@ class ContentBottomSheetWidget extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 20.w,
+                        height: 24.w,
                       ),
                       if (title != null && title!.isNotEmpty) ...[
                         Padding(
